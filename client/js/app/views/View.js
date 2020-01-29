@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
 System.register([], function (_export, _context) {
     "use strict";
 
-    var _createClass, Negociacao;
+    var _createClass, View;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -32,47 +32,31 @@ System.register([], function (_export, _context) {
                 };
             }();
 
-            _export("Negociacao", Negociacao = function () {
-                function Negociacao(data, quantidade, valor) {
-                    _classCallCheck(this, Negociacao);
+            _export('View', View = function () {
+                function View(elemento) {
+                    _classCallCheck(this, View);
 
-                    this._data = new Date(data.getTime());
-                    this._quantidade = quantidade;
-                    this._valor = valor;
-                    Object.freeze(this);
+                    this._elemento = elemento;
                 }
 
-                _createClass(Negociacao, [{
-                    key: "volume",
-                    get: function get() {
+                _createClass(View, [{
+                    key: 'template',
+                    value: function template() {
 
-                        return this._quantidade * this._valor;
+                        throw new Error('O método template deve ser implementado');
                     }
                 }, {
-                    key: "data",
-                    get: function get() {
-
-                        return new Date(this._data.getTime());
-                    }
-                }, {
-                    key: "quantidade",
-                    get: function get() {
-
-                        return this._quantidade;
-                    }
-                }, {
-                    key: "valor",
-                    get: function get() {
-
-                        return this._valor;
+                    key: 'update',
+                    value: function update(model) {
+                        this._elemento.innerHTML = this.template(model);
                     }
                 }]);
 
-                return Negociacao;
+                return View;
             }());
 
-            _export("Negociacao", Negociacao);
+            _export('View', View);
         }
     };
 });
-//# sourceMappingURL=Negociacao.js.map
+//# sourceMappingURL=View.js.map

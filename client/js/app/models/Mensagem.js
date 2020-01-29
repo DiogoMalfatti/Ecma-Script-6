@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
 System.register([], function (_export, _context) {
     "use strict";
 
-    var _createClass, Negociacao;
+    var _createClass, Mensagem;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -32,47 +32,32 @@ System.register([], function (_export, _context) {
                 };
             }();
 
-            _export("Negociacao", Negociacao = function () {
-                function Negociacao(data, quantidade, valor) {
-                    _classCallCheck(this, Negociacao);
+            _export('Mensagem', Mensagem = function () {
 
-                    this._data = new Date(data.getTime());
-                    this._quantidade = quantidade;
-                    this._valor = valor;
-                    Object.freeze(this);
+                // constructor(texto='') {
+                function Mensagem(texto) {
+                    _classCallCheck(this, Mensagem);
+
+                    this._texto = texto || '';
                 }
 
-                _createClass(Negociacao, [{
-                    key: "volume",
+                _createClass(Mensagem, [{
+                    key: 'texto',
                     get: function get() {
 
-                        return this._quantidade * this._valor;
-                    }
-                }, {
-                    key: "data",
-                    get: function get() {
+                        return this._texto;
+                    },
+                    set: function set(texto) {
 
-                        return new Date(this._data.getTime());
-                    }
-                }, {
-                    key: "quantidade",
-                    get: function get() {
-
-                        return this._quantidade;
-                    }
-                }, {
-                    key: "valor",
-                    get: function get() {
-
-                        return this._valor;
+                        this._texto = texto;
                     }
                 }]);
 
-                return Negociacao;
+                return Mensagem;
             }());
 
-            _export("Negociacao", Negociacao);
+            _export('Mensagem', Mensagem);
         }
     };
 });
-//# sourceMappingURL=Negociacao.js.map
+//# sourceMappingURL=Mensagem.js.map
